@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Cart Example</title>
+    <style>
+        table {
+            width: 50%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: blue;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Items</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Item 1</td>
+            <td><button onclick="addToCart(0)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Item 2</td>
+            <td><button onclick="addToCart(1)">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td>Item 3</td>
+            <td><button onclick="addToCart(2)">Add to Cart</button></td>
+        </tr>
+    </table>
+
+    <h2>Cart</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Item 1</td>
+            <td id="cartItem0">0</td>
+        </tr>
+        <tr>
+            <td>Item 2</td>
+            <td id="cartItem1">0</td>
+        </tr>
+        <tr>
+            <td>Item 3</td>
+            <td id="cartItem2">0</td>
+        </tr>
+    </table>
+
+    <script>
+        let cartItems = [0, 0, 0];  // Array to track quantities of each item
+
+        function addToCart(itemIndex) {
+            cartItems[itemIndex]++;
+            document.getElementById(`cartItem${itemIndex}`).textContent = cartItems[itemIndex];
+        }
+    </script>
+
+</body>
+</html>
